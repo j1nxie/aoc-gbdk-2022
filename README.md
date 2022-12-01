@@ -10,12 +10,6 @@ Project directories
   - res: Program graphics and audio source files (.c, .h, .s) can go here
   - obj: Compiled ROM (.gb) and debug files go in this directory
 
-## Acknowledgements
+## License
 
-- Sprites and Dungeon Map:
-
-https://sondanielson.itch.io/gameboy-simple-rpg-tileset
-
-"Licence is under CCA so you can use these assets both privately and commercially"
-"You are free to use them as is or modify them to your liking. All i ask is you
-credit me if you do use them please :)"
+This codebase is licensed under the GPLv3.
