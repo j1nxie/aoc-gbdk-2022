@@ -1,31 +1,42 @@
 #include <gb/gb.h>
-#include <stdint.h>
-#include "../res/dungeon_map.h"
-#include "../res/dungeon_tiles.h"
+#include <gbdk/font.h>
 
+#include "globals.h"
 
-void init_gfx() {
-    // Load Background tiles and then map
-    set_bkg_data(0, 79u, dungeon_tiles);
-    set_bkg_tiles(0, 0, 32u, 32u, dungeon_mapPLN0);
+#include "states/intro.h"
+#include "states/01a.h"
+#include "states/01b.h"
 
-	// Turn the background map on to make it visible
-    SHOW_BKG;
-}
+#include "../res/maps/intro_map.h"
 
+void main(void) {
+	// Create font
+	font_init();
 
-void main(void)
-{
-	init_gfx();
+	const font_t spect_font = font_load(font_spect);
+	font_set(spect_font);
+
+	init_intro();
+	state = STATE_INTRO;
 
     // Loop forever
     while(1) {
+		UPDATE_KEYS();
+		switch (state) {
+			case STATE_INTRO:
+				run_intro();
+				break;
+			case STATE_1A:
+				run_1a();
+				break;
+			case STATE_1B:
+				run_1b();
+				break;
+		}
 
-
-		// Game main loop processing goes here
-
-
-		// Done processing, yield CPU and wait for start of next frame
-        wait_vbl_done();
+		if (KEY_TICKED(J_START) && state != STATE_INTRO) {
+			init_intro();
+			state = STATE_INTRO;
+		}
     }
 }

@@ -1,6 +1,1 @@
-REM Automatically generated from Makefile
-mkdir obj
-C:\gbdk\bin\lcc   -c -o obj\main.o src\main.c
-C:\gbdk\bin\lcc   -c -o obj\dungeon_map.o res\dungeon_map.c
-C:\gbdk\bin\lcc   -c -o obj\dungeon_tiles.o res\dungeon_tiles.c
-C:\gbdk\bin\lcc   -o obj\Example.gb obj\main.o obj\dungeon_map.o obj\dungeon_tiles.o 
+C:\gbdk\bin\lcc -Wa-IC:\gbdk\lib\small\asxxxx\ -Wf--max-allocs-per-node5000 -Wl-yt0x19 -Wm-yoA -Wl-y -Wf--debug -o obj\main.gb src\*.c src\states\*.c res\maps\*.c res\sprites\*.c inputs\*.c
