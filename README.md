@@ -6,10 +6,11 @@ The Makefile will automatically detect and compile new source files
 when they are added to the "src" and "res" directories.
 
 Project directories
-  - src: Main program source files (.c, .h, .s) can go here
-  - res: Program graphics and audio source files (.c, .h, .s) can go here
-  - obj: Compiled ROM (.gb) and debug files go in this directory
+  - `src`: Main program source files (`.c`, `.h`, `.s`) can go here
+  - `res`: Program graphics and audio source files (`.c`, `.h`, `.s`) can go here
+  - `obj`: Compiled ROM (`.gb`) and debug files go in this directory
 
 ## License
 
-This codebase is licensed under the GPLv3.
+This codebase is licensed under the [GNU General Public License v3.0](LICENSE)
+license.
